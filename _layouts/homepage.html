@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123712244-11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-123712244-11');
+</script>
+        
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="image" property="og:image" content="https://pastelhex.online/img/portfolio-may-2022-light.png">
+    <meta name="description" property="og:description" content="{{ site.description }}">
+    <meta name="title" property="og:title" content="{{ site.title }}">
+    <meta name="keywords" content="web developer, web designer, front end developer, pastelhex">
+    <meta name="author" content="{{ site.author_name }}">
+    <meta name="twitter" content="{{ site.username }}"> 
+    <meta name="github" content="{{ site.username }}">
+    <meta property="og:type" content="website"> 
+    <meta property="og:url" content="https://pastelhex.online/"> 
+
+    {{ page.meta }}
+  
+    <title>{{ site.title }} {{ page.title }}</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+   
+    <link href="/index.css" rel="stylesheet">
+    <link href="/cssreset.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ site.favicon }}">
+
+    <script src="https://kit.fontawesome.com/56182aba27.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+<div class="canvas">
+
+<div id="about"></div>
+
+<div class="navigation">
+  <div class="logo"><h1><a href="/">pastelhex</a><span>&nbsp;&nbsp;<span class="slash">/</span>&nbsp; Web&nbsp;Developer&nbsp;&nbsp;&nbsp;<a id="theme-toggle" class="desktop" onclick="modeSwitcher()" style="padding:0px 30px 0px 0px;"></a></span></h1></div>
+  <i class="nav-toggle fa fa-2x fa-bars" aria-hidden="true" id="toggle-open"></i>
+    <div class="pages">
+      <div class="nav-mobile-header">
+        <h1 style="margin-bottom:10px!important;margin-left: -10px !important;">pastelhex<span style="text-transform:uppercase!important;font-weight:normal!important;">&nbsp;&nbsp;<span class="slash">/</span>&nbsp; Web&nbsp;Developer</span></h1>
+          <i class="nav-toggle fa fa-2x fa-close" aria-hidden="true" id="toggle-close"></i>
+        </div>
+        <a href="#top">About&nbsp;Me</a>
+        <a href="#projects">Projects</a>
+        <a href="mailto:pastelhex@hotmail.com">Contact</a>
+    </div>
+</div>
+
+
+<div class="about">
+    
+<div class="behindcard">
+    <div class="card" id="about-me">
+        <img src="{{ site.logo }}">
+        <h1>
+            pastelhex
+        </h1>
+        <div class="divider"></div>
+        <span>Front&#8209;End<br> Web&nbsp;Developer</span>
+        <div class="socials">
+            <a href="https://github.com/pastelhex97" target="_blank" title="Github"><i class="fab fa-github"></i></a> <a href="https://www.duolingo.com/profile/pastelhex" target="_blank" title="Duolingo"><i class="fas fa-feather"></i></a>
+        </div>
+    </div>
+</div>
+<div class="business">
+    <div class="businesspiece">
+        <h3 class="greeting">{{content}}</h3>
+        <h4 class="intro">Here's who I am &amp; what I do</h4>
+        <div class="introbuttons"><a href="#projects" class="button One">Projects</a></div>
+        <p>I'm a professional front-end web developer who's been coding since 2013. I earned a University degree in Information Technology in 2019.</p>
+      <div id="text" class="hidden">
+        <p>Besides making websites, I also love spoken languages. As a multilingual individual of Cuban descent, I'm fluent in Spanish and English and have studied German since Middle School and French since High School. My other hobbies are drawing, gaming casually, watching anime, observing wildlife, and exploring niches.</p>
+        <p>I value authenticity, honesty, love, loyalty, peace, logic, learning, creativity, and humor. I love my family, my birds, and my boyfriend. ♡</p>
+
+      </div>
+        <p id="less" class="hidden"><a>Show less</a></p>
+        <p id="more"><a>Show more</a></p>        
+    </div>
+</div>
+</div>
+
+
+<div class="projects" id="projects">  
+    <h2>Projects</h2>
+    <p class="intro">These are my favorite programming projects. Click to see the source code or visit the live version. All my projects are hosted on Github.</p>
+
+    
+{% for post in site.posts %}
+    
+    <div class="project">
+     <div class="projectDetails">
+     <div class="name">
+       <a href="{{ post.link }}" target="_blank">{{ post.title }}</a>
+     <p>{{ post.projectDate }}</p>
+     </div>
+     <p>{{ post.excerpt }}</p>
+     </div>
+     <div class="projectImage" style="background-image:url('https://pastelhex.online/img/{{ post.img }}');background-color:{{ post.bgcolor }};"></div>
+    </div>    
+
+
+        {% endfor %} 
+    
+</div>
+
+
+<div class="contact">
+
+
+</div>
+</div>
+
+<script src="/mode-switcher.js"></script>
+<script src="/mobile-menu.js"></script>
+<script src="/showAboutMe.js"></script>
+  
+</body>
+</html>
